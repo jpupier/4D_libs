@@ -1,0 +1,19 @@
+﻿//%attributes = {"lang":"en","invisible":true} comment added and reserved by 4D.
+// Avoid accidental running
+If (False)
+
+C_BOOLEAN(ARR_ElementExists ;$0)
+C_LONGINT(ARR_ElementExists ;$1)
+C_POINTER(ARR_ElementExists ;$2)
+
+C_BOOLEAN(TYPE_isArray ;$0)
+C_POINTER(TYPE_isArray ;$1)
+
+C_BOOLEAN(TYPE_is1DArray ;$0)
+C_POINTER(TYPE_is1DArray ;$1)
+
+C_BOOLEAN(TYPE_is2DArray ;$0)
+C_POINTER(TYPE_is2DArray ;$1)
+
+
+End if 

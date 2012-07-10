@@ -1,0 +1,39 @@
+﻿//%attributes = {"lang":"en","shared":true} comment added and reserved by 4D.
+// bool:=TYPE_is1DArray (varPtr)
+// ----------------------------------------------------
+// Description  
+//   Returns true if $1 points to a 1D array
+// ----------------------------------------------------
+C_BOOLEAN($0;$is1DArray_b)
+$is1DArray_b:=False
+C_POINTER($1;$varPtr_p)
+// ----------------------------------------------------
+C_LONGINT($type_l)
+// ----------------------------------------------------
+// 
+If (Count parameters>=1)
+$varPtr_p:=$1
+$type_l:=Type($varPtr_p->)
+//
+$is1DArray_b:=True// Be positive
+Case of 
+: ($type_l=Boolean array )
+: ($type_l=Date array )
+: ($type_l=Integer array )
+: ($type_l=LongInt array )
+: ($type_l=Picture array )
+: ($type_l=Pointer array )
+: ($type_l=Real array )
+: ($type_l=String array )
+: ($type_l=Text array )
+//: ($type_l=Blob array)// unsupported
+//: ($type_l=Time array)// unsupported
+Else 
+$is1DArray_b:=False// Not an array
+End case 
+End if 
+
+//
+// ----------------------------------------------------
+$0:=$is1DArray_b
+// ----------------------------------------------------

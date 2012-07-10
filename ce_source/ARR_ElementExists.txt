@@ -1,0 +1,30 @@
+﻿//%attributes = {"lang":"en","shared":true} comment added and reserved by 4D.
+// bool:=ARR_ElementExists(element;->array)
+// ----------------------------------------------------
+// Description
+//  Retruns True if the element exists in the referenced array
+//  No specific handling for 2D arrays
+// Parameters
+// ----------------------------------------------------
+C_BOOLEAN($0;$elementExists_b)
+$elementExists_b:=False
+C_LONGINT($1;$element_l)
+C_POINTER($2;$arrayPtr_p)
+// ----------------------------------------------------
+//
+If (Count parameters>=2)
+$element_l:=$1
+$arrayPtr_p:=$2
+//
+If (TYPE_isArray ($arrayPtr_p))
+If ($element_l>0) & ($element_l<=Size of array($arrayPtr_p->))
+//
+$elementExists_b:=True
+//
+End if 
+End if 
+End if 
+//
+// ----------------------------------------------------
+$0:=$elementExists_b
+// ----------------------------------------------------

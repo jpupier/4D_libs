@@ -1,0 +1,25 @@
+﻿//%attributes = {"lang":"en","shared":true} comment added and reserved by 4D.
+// bool:=TYPE_is2DArray(varPtr)
+// ----------------------------------------------------
+// Description
+//   Returns true if $1 points to a 2D array
+// ----------------------------------------------------
+C_BOOLEAN($0;$is2DArray_b)
+$is2DArray_b:=False
+C_POINTER($1;$varPtr_p)
+// ----------------------------------------------------
+C_LONGINT($type_l)
+// ----------------------------------------------------
+// 
+If (Count parameters>=1)
+$varPtr_p:=$1
+$type_l:=Type($varPtr_p->)
+//
+$is2DArray_b:=($type_l=Array 2D )
+End if 
+//
+// ----------------------------------------------------
+$0:=$is2DArray_b
+// ----------------------------------------------------
+
+

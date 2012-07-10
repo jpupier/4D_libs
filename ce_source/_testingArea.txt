@@ -1,0 +1,39 @@
+﻿//%attributes = {"lang":"en"} comment added and reserved by 4D.
+// ----------------------------------------------------
+// Method: _testingArea
+// I use this place to run some code and keep it for future reuse
+// ----------------------------------------------------
+ARRAY TEXT($arr_at;0)
+ARRAY TEXT($arr2D_at;0;0)
+C_BOOLEAN($bool)
+// ----------------------------------------------------
+//
+TRACE
+//
+//
+Case of 
+: (True)
+ARRAY TEXT($arr_at;2)
+$bool:=ARR_ElementExists (0;->$arr_at)
+$bool:=ARR_ElementExists (1;->$arr_at)
+$bool:=ARR_ElementExists (10;->$arr_at)
+
+: (True)
+$bool:=TYPE_isArray (->$arr_at)
+$bool:=TYPE_isArray (->$arr2D_at)
+$bool:=TYPE_isArray (->$bool)
+
+: (True)
+$bool:=TYPE_is2DArray (->$arr_at)
+$bool:=TYPE_is2DArray (->$arr2D_at)
+$bool:=TYPE_is2DArray (->$bool)
+
+: (True)
+$bool:=TYPE_is1DArray (->$arr_at)
+$bool:=TYPE_is1DArray (->$arr2D_at)
+$bool:=TYPE_is1DArray (->$bool)
+
+
+
+End case 
+
